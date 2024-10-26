@@ -11,7 +11,10 @@ jobs:
     - name: Hello World
       run: echo "Hello World"
 
-    - name: Enviroment Variables
+    - name: Environment Variables
       env:
-          CURRENT_DATE:'2024-10-25'
-      run: echo '$CURRENT_DATE'
+          CURRENT_DATE: '2024-10-26'
+      run: |
+          echo '$CURRENT_DATE'
+          echo "Linux date: $(date)"
+          echo "Github context date: ${{github.event.repository.pushed_at}}"
